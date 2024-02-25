@@ -28,7 +28,8 @@ public class HeartbeatPoneMessageHandler implements MyMessageHandler{
         try {
             heartBeatPong = TestDataTransOuterClass.HeartBeatPong.parseFrom(messageBytes);
         } catch (InvalidProtocolBufferException e) {
-            log.error("解析心跳响应消息失败", e);
+            log.error("收到心跳响应消息, 解析心跳响应消息失败", e);
+            return;
         }
         log.info("收到心跳响应消息, msg_id:{}, 服务器时间:{}", heartBeatPong.getMsgId(), heartBeatPong.getReceivedTimeMillis());
     }

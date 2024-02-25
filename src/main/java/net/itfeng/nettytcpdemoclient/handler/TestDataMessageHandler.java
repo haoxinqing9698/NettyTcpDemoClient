@@ -33,7 +33,7 @@ public class TestDataMessageHandler implements MyMessageHandler{
                 messageAsyncPublishService.publish(DataTransPackageOuterClass.DataType.TEST_DATA_TRANS_RESULT,buildSuccessResult(testData).toByteArray(),testData.getClientId());
             }else{
                 // 发送一个消息为空的result
-                messageAsyncPublishService.publish(DataTransPackageOuterClass.DataType.TEST_DATA_TRANS_RESULT,buildResult("TEST_DATA_NULL").toByteArray(),testData.getClientId());
+                messageAsyncPublishService.publish(DataTransPackageOuterClass.DataType.TEST_DATA_TRANS_RESULT,buildResult("TEST_DATA_NULL").toByteArray(),ClientIdUtil.getClientId());
             }
         } catch (InvalidProtocolBufferException e) {
             // 发送一个解析失败的result

@@ -23,9 +23,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
@@ -147,7 +147,7 @@ public class TcpClientBootstrap {
                         messageAsyncPublishService.publish(DataTransPackageOuterClass.DataType.HEARTBEAT_PING, ping.toByteArray(), ping.getClientId());
                         log.info("发送心跳 msg_id:{}, timestamp:{}",ping.getMsgId(), System.currentTimeMillis());
                     }
-                    Thread.sleep(5000); // Send a heartbeat every 5 seconds
+                    TimeUnit.SECONDS.sleep(5L); // Send a heartbeat every 5 seconds
                 } catch (InterruptedException e) {
                     log.error("发送心跳异常", e);
                 }

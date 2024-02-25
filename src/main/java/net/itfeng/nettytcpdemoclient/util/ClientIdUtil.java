@@ -42,7 +42,7 @@ public class ClientIdUtil {
                             macAddress.append(String.format("%02X:", b));
                         }
 
-                        if (macAddress.length() > 0) {
+                        if (!macAddress.isEmpty()) {
                             macAddress.deleteCharAt(macAddress.length() - 1); // 移除末尾的冒号
                         }
                         return macAddress.toString();

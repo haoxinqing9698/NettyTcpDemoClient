@@ -1,10 +1,6 @@
 package net.itfeng.nettytcpdemoclient.context;
 
-import com.google.common.cache.Cache;
-import com.google.common.cache.CacheBuilder;
 import io.netty.channel.Channel;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * 用于保存客户端与服务端连接的channel
