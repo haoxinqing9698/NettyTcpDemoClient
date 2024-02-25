@@ -1,0 +1,35 @@
+syntax = "proto3";
+package net.itfeng.nettytcpdemoclient.protocol;
+option java_package = "net.itfeng.nettytcpdemoclient.protocol";
+
+message DataTransPackage {
+
+  /**
+   * 消息类型
+   */
+  DataType dataType = 1;
+  /**
+   * 客户端的唯一标识
+   */
+  string clientId=2;
+  /**
+    * 消息体
+    */
+  bytes pbData = 3;
+
+
+}
+
+enum DataType {
+  DEFAULT = 0x000;
+  TEST_DATA_TRANS = 0x001;
+  TEST_DATA_TRANS_RESULT = 0x002;
+  CLIENT_TIME_DIFF = 0x003;
+  HEARTBEAT_PING = 0x004;
+  HEARTBEAT_PONG = 0x005;
+  ONLINE_EVENT = 0x006;
+
+}
+
+
+

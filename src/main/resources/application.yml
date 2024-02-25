@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: NettyTcpDemoClient
+  profiles:
+    active: dev
+
+# 配置netty服务端地址
+netty:
+  tcp:
+    serverHost: 127.0.0.1
+    serverPort: 11100
+
+# 多线程参数
+thread_pools:
+  # 时间校准消息处理器线程池
+  message_handler_pool:
+    corePoolSize: 1
+    maxPoolSize: 10
+    queueCapacity: 25
+    threadNamePrefix: "message-handler-"
+  # mqtt消息发布线程池
+  message_publisher_pool:
+    corePoolSize: 1
+    maxPoolSize: 10
+    queueCapacity: 25
+    threadNamePrefix: "message-publisher-"
