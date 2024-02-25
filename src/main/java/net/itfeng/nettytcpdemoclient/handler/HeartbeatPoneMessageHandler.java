@@ -24,7 +24,7 @@ public class HeartbeatPoneMessageHandler implements MyMessageHandler{
 
     @Async("messageHandlerPool")
     public void handle(byte[] messageBytes)  {
-        TestDataTransOuterClass.HeartBeatPong heartBeatPong = null;
+        TestDataTransOuterClass.HeartBeatPong heartBeatPong;
         try {
             heartBeatPong = TestDataTransOuterClass.HeartBeatPong.parseFrom(messageBytes);
         } catch (InvalidProtocolBufferException e) {
