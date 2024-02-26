@@ -8,7 +8,7 @@ import java.util.Enumeration;
 /**
  * 基于MAC地址生成唯一client_id
  *
- * @author fengxubo
+ * @author itfeng
  * @since 2024/1/9 11:36
  * 
  */

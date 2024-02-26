@@ -11,7 +11,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 /**
  * 线程池配置
  *
- * @author fengxubo
+ * @author itfeng
  * @since 2024/1/9 19:05
  * 
  */
